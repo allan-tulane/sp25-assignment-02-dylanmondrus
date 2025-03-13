@@ -23,6 +23,14 @@ def parens_match_iterative(mylist):
     False
     """
     ### TODO
+    def iterate(f, initial, lst):
+        result = initial
+        for item in lst:
+            result = f(result, item)
+            if result == -math.inf:  
+                return result
+        return result
+
     return iterate(parens_update, 0, mylist) == 0
     ###
 
@@ -77,7 +85,8 @@ def parens_match_scan(mylist):
     
     """
     ###TODO
-    history, last = scan(plus, 0, list(map(paren_map, mylist)))
+    
+    history, last = scan(lambda x, y: x+y, 0, list(map(paren_map, mylist)))
     return last == 0 and reduce(min_f, 0, history) >= 0
     ###
 
@@ -159,15 +168,17 @@ def parens_match_dc_helper(mylist):
             return (1, 0) # one unmatched )    
         else:
             return (0, 0)
-    i,j = parens_match_dc_helper(mylist[:len(mylist)//2])
-    k,l = parens_match_dc_helper(mylist[len(mylist)//2:])
+    mid = len(mylist) // 2
+    (i, j) = parens_match_dc_helper(mylist[:mid])
+    (k, l) = parens_match_dc_helper(mylist[mid:])
+    
     # Combination:
     # Return the tuple (R,L) using some combination of the values i,j,k,l defined above.
     # This should be done in constant time.
-    if j > k:
-        return (i, l + j - k)
-    else:
-        return (i + k - j, l)
+    unmatched_right = i + max(0, k - j)
+    unmatched_left = l + max(0, j - k)
+
+    return (unmatched_right, unmatched_left)
     ###
     
 

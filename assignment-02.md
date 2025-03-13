@@ -17,7 +17,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=2W(n/3)+1$
 .  
 .  
-. 
+. W(n) = O(n^log3 2)
 .  
 . 
 .  
@@ -26,7 +26,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=5W(n/4)+n$
 .  
 .
-.  
+.  W(n) = O(n^log4 5)
 . 
 .  
 . 
@@ -38,7 +38,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 . 
 .  
-.  
+.  W(n) = O(n log n)
 . 
 .  
 .
@@ -46,7 +46,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 * $W(n)=9W(n/3)+n^2$
 .  
 .
-. 
+. W(n) = O(n^2 log n)
 .  
 . 
 .  
@@ -58,7 +58,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 .
 .  
-.  
+.  W(n) = O(n^3 log n)
 .  
 .  
 . 
@@ -71,7 +71,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 . 
 .  
-. 
+. W(n) = O(log 25 n)
 .  
 .  
 .  
@@ -80,7 +80,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 .  
 . 
-.  
+.  W(n) = O(n)
 . 
 .  
 .  
@@ -92,7 +92,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 .  
 .  
-. 
+. W(n) = O(n^c)
 .  
 . 
 
@@ -100,7 +100,7 @@ Derive asymptotic upper bounds of work for each recurrence below.
 .  
 .  
 .  
-.  
+.  O(log log n)
 .  
 . 
 . 
@@ -127,10 +127,10 @@ Suppose that for a given task you are choosing between the following three algor
     Which algorithm would you choose?
 
 
-.  
-.  
-.  
-.  
+.  Algorithm A: W(n) = O(n^log2 5)
+.  Algorithm B: W(n) = O(2^n)
+.  Algorithm C: W(n) = O(n^2 log n)
+.  I would choose algorithm B because it has the slowest growing time complextiy, but not by much. 
 . 
 . 
 
@@ -162,8 +162,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+.  W(n) = O(n)
+. S(n) = O(n)
 
 
 
@@ -178,8 +178,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-.  
+.  W(n) = O(n)
+.  S(n) = O(log n)
 
 
 
@@ -199,8 +199,8 @@ Below, we'll solve this problem three different ways, using iterate, scan, and d
 
 **enter answer here**
 
-.  
-. 
+.  W(n) = 2W(n/2) + O(1). W(n) = O(n)
+. S(n) = S(n/2) + O(1). S(n) = O(log n)
 
 
  
